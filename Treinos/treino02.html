@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora etária</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            height: calc(100vh - 133px);
+            position: relative;
+        }
+
+        main > div#somatorio {
+            position: absolute;
+            font-size: 1.5em;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+        }
+
+        footer {
+            background-color: black;
+            text-align: center;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Calculadora etária</h1>
+        <p>By Bruno Campos</p>
+    </header>
+    <main>
+        <div id="somatorio">
+            <label for="name">Informe seu nome:</label>
+            <input type="text" id="name" name="name"><br>
+            <label for="ano">informe o ano do nascimento:</label>
+            <input type="number" id="ano" name="ano"><br>
+            <label for="atual">Qual o atual ano?</label>
+            <input type="number" id="atual" name="atual"><br>
+            <input type="submit" value="Somar" onclick="enviar()">
+        </div>
+        <div id="resultado">
+            <p id="texto">Aqui está o resultado</p>
+        </div>
+    </main>
+    <footer>
+        <p>Criado para treinamento em JavaScript</p>
+    </footer>
+
+    <script>
+        function enviar () {
+            var some = document.getElementById('somatorio')
+            var name = document.getElementById('name').value
+            var an = document.getElementById('ano')
+            var aa = document.getElementById('atual')
+            var an1 = Number(an.value)
+            var aa1 = Number(aa.value)
+            var result = document.getElementById('resultado')
+            var soma = aa1 - an1
+            var txt = document.getElementById('texto')
+
+            txt.innerText = `Olá, ${name}. Atualmente você tem, ou irá fazer: ${soma} anos.`
+
+        }
+
+    </script>
+
+</body>
+</html>

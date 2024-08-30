@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade:</h1> 
+    Você nasceu no(a): <input type="txt" name="txtvel" id="txtvel">
+    <input type="button" value="Verificar" onclick="calcular()">
+
+    <div id="resultado">
+
+    </div>
+
+    <script>
+        function calcular () {
+        var nac = document.getElementById('txtvel').value
+        var res = document.getElementById('resultado')
+        res.innerHTML = `<p>Você nasceu no(a) ${nac}</p>`
+
+        if (nac == 'Brasil') {
+            res.innerHTML += `<p>Você é brasileiro!</p>`
+        } else {
+            res.innerHTML += `<p>Você é estrangeiro!</p>`
+        }
+        res.innerHTML += `Porém, seja bem vindo!`
+    }
+    </script>
+</body>
+</html>
